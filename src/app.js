@@ -5,6 +5,8 @@ const connectDB = require("./config/db");
 const employeeRoutes = require("./routes/employeeRoutes");
 const clientRoutes = require("./routes/ClientRoutes");
 const vehicleRoutes = require("./routes/vehicleRoutes");
+const WorkOrderRoutes = require ("./routes/WorkOrderRoutes");
+const serviceRoutes = require("./routes/serviceRoutes");
 
 
 require("dotenv").config();
@@ -18,6 +20,8 @@ app.use(express.json());
 app.use("/api/employees", employeeRoutes);
 app.use("/api/clients", clientRoutes);
 app.use("/api/vehicles", vehicleRoutes);
+app.use("/api/workorders", WorkOrderRoutes);
+app.use("/api/services", serviceRoutes);
 
 app.get("/", (req, res) => {
     res.send("API Taller funcionando")
